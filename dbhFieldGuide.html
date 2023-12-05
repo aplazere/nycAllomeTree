@@ -28619,6 +28619,40 @@ const checkdbh = document.getElementById('dbh');
     });
 
 
+    checkdbh.addEventListener('touchend', (event) => {
+    var x = document.getElementById('TreeName').value;
+    var y = document.getElementById('predict').value;
+      if (x != '') {
+         obj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
+         currmax=parseFloat(obj.max)
+         currmin=parseFloat(obj.min)
+         currval=parseFloat(checkdbh.value)
+         if ((checkdbh.value != '') && (event.key != "Backspace" && event.key != "Delete")){
+            if ((isNaN(event.key) || isNaN(currval) )) {
+            document.getElementById("warning").textContent="please enter only numerical characters"
+
+
+          }else if ( ( currval < currmax && currval > currmin)){
+            
+            document.getElementById("warning").textContent=""
+            return
+          }else {
+
+            document.getElementById("warning").textContent="warning: DBH is outside of data range. Prediction accuracy not guarenteed!"
+            return
+          }
+         }else {
+
+          document.getElementById("warning").textContent=""
+
+         }
+        
+        // Perform desired actions here
+      }
+    });
+
+
+
 
 
     
