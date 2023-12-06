@@ -28585,17 +28585,17 @@ justnames.forEach(function(item){
 
 
 
-const checkdbh = document.getElementById('dbh');
-    checkdbh.addEventListener('keyup', (event) => {
+const checkdbhDesktop = document.getElementById('dbh');
+    checkdbhDesktop.addEventListener('keyup', (event) => {
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
       if (x != '') {
          obj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
          currmax=parseFloat(obj.max)
          currmin=parseFloat(obj.min)
-         currval=parseFloat(checkdbh.value)
-         if ((checkdbh.value != '') && (event.key != "Backspace" && event.key != "Delete")){
-            if ((isNaN(event.key) || isNaN(currval) )) {
+         currval=parseFloat(checkdbhDesktop.value)
+         if ((checkdbhDesktop.value != '') && (event.key != "Backspace" && event.key != "Delete")){
+            if ((isNaN(currval) || isNaN(event.key))) {
             document.getElementById("warning").textContent="please enter only numerical characters"
 
 
@@ -28619,15 +28619,15 @@ const checkdbh = document.getElementById('dbh');
     });
 
 
-    checkdbh.addEventListener('touchend', (event) => {
+    checkdbhMobile.addEventListener('touchend', (event) => {
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
       if (x != '') {
          obj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
          currmax=parseFloat(obj.max)
          currmin=parseFloat(obj.min)
-         currval=parseFloat(checkdbh.value)
-         if ((checkdbh.value != '') && (event.key != "Backspace" && event.key != "Delete")){
+         currval=parseFloat(checkdbhMobile.value)
+         if ((checkdbhMobile.value != '') && (event.key != "Backspace" && event.key != "Delete")){
             if ((isNaN(event.key) || isNaN(currval) )) {
             document.getElementById("warning").textContent="please enter only numerical characters"
 
@@ -28663,6 +28663,7 @@ function dbhCalculate() {
     
     for (let i = 0; i < regionData.length; i++) {
         if (coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region) !=null){
+          obj = coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region)
           DataLabel= ("data collected in: " + regionData[i].City + ', ' + regionData[i].State + ". " + regionData[i].Year)
           break;
         }else{
@@ -28673,7 +28674,7 @@ function dbhCalculate() {
     }
 
     
-    var dbh = document.getElementById('dbh').value;
+    var dbh = parseFloat(document.getElementById('dbh').value);
     if (obj.EqName === "lin") {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
@@ -28684,7 +28685,7 @@ function dbhCalculate() {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
         var c = parseFloat(obj.c)
-        output=((a + b * dbh + c *dbh^2) + " " + obj.PredUnit)
+        output=((a + b * dbh + c * Math.pow(dbh,2)) + " " + obj.PredUnit)
         //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "cub") {
@@ -28693,7 +28694,7 @@ function dbhCalculate() {
         var c = parseFloat(obj.c)
         var d = parseFloat(obj.d)
 
-       output=( (a + b * dbh + c *dbh^2 + d * dbh^3) + " " + obj.PredUnit)
+       output=( (a + (b * dbh) + (c * (Math.pow(dbh,2))+ (d * Math.pow(dbh,3))) ) + " " + obj.PredUnit) 
        //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "quart") {
@@ -28703,7 +28704,7 @@ function dbhCalculate() {
         var d = parseFloat(obj.d)
         var e = parseFloat(obj.e)
 
-        output=(( a + b * dbh + c *dbh^2 + d * dbh^3 + e * dbh^4) + " " + obj.PredUnit)
+        output=(( a + b * dbh + c *Math.pow(dbh,2) + d * Math.pow(dbh,3)+ e * Math.pow(dbh,4)) + " " + obj.PredUnit)
         //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "loglogw1") {
@@ -28732,7 +28733,7 @@ function dbhCalculate() {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + (dbh^2) * (c/2)) + " " + obj.PredUnit)
+      output=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + Math.pow(dbh,2) * (c/2)) + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "expow1") {
@@ -28760,7 +28761,7 @@ function dbhCalculate() {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * (dbh) + (dbh^2) * (c/2)) + " " + obj.PredUnit)
+      output=(Math.exp(a + b * (dbh) + Math.pow(dbh,2) * (c/2)) + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } 
