@@ -28590,9 +28590,9 @@ const checkdbhDesktop = document.getElementById('dbh');
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
       if (x != '') {
-         obj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
-         currmax=parseFloat(obj.max)
-         currmin=parseFloat(obj.min)
+         tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
+         currmax=parseFloat(tempobj.max)
+         currmin=parseFloat(tempobj.min)
          currval=parseFloat(checkdbhDesktop.value)
          if ((checkdbhDesktop.value != '') && (event.key != "Backspace" && event.key != "Delete")){
             if ((isNaN(currval) || isNaN(event.key))) {
@@ -28623,9 +28623,9 @@ const checkdbhDesktop = document.getElementById('dbh');
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
       if (x != '') {
-         obj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
-         currmax=parseFloat(obj.max)
-         currmin=parseFloat(obj.min)
+         tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
+         currmax=parseFloat(tempobj.max)
+         currmin=parseFloat(tempobj.min)
          currval=parseFloat(checkdbhMobile.value)
          if ((checkdbhMobile.value != '') && (event.key != "Backspace" && event.key != "Delete")){
             if ((isNaN(event.key) || isNaN(currval) )) {
