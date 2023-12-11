@@ -28689,7 +28689,13 @@ justnames.forEach(function(item){
 function checkWindowSize(){
 
 curwidth= window.innerWidth
-if (curwidth < 600){
+if (curwidth < 600 || (navigator.userAgent.match(/Android/i)
+         || navigator.userAgent.match(/webOS/i)
+         || navigator.userAgent.match(/iPhone/i)
+         || navigator.userAgent.match(/iPad/i)
+         || navigator.userAgent.match(/iPod/i)
+         || navigator.userAgent.match(/BlackBerry/i)
+         || navigator.userAgent.match(/Windows Phone/i))){
  document.getElementById("TreeName").size=5
 }else if (curwidth < 800){
  document.getElementById("TreeName").size=3
@@ -28699,21 +28705,7 @@ if (curwidth < 600){
 
 }
 var platform = document.getElementById("result");
-function checkMobile(){
-         if (navigator.userAgent.match(/Android/i)
-         || navigator.userAgent.match(/webOS/i)
-         || navigator.userAgent.match(/iPhone/i)
-         || navigator.userAgent.match(/iPad/i)
-         || navigator.userAgent.match(/iPod/i)
-         || navigator.userAgent.match(/BlackBerry/i)
-         || navigator.userAgent.match(/Windows Phone/i)) {
-           document.getElementById("TreeName").size=5
-           alert("working")
-           
-         }
-}
-         
-checkMobile()
+
 checkWindowSize()
 
 window.addEventListener("resize", checkWindowSize)
