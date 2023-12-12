@@ -56,8 +56,50 @@ p1 {
   grid-row: 5/7;
 }
 
-@media screen and (max-width:800px) {
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
 
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 12vw;
+  height:auto;
+  background-color: #4F7942;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  top: -10vh;
+  left: 1vw;
+  overflow-x: hidden;
+
+  /* Position the tooltip */
+  position: absolute;
+  margin-top: .5rem;
+  
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltiptext{
+  font-size: 0.8vw;
+}
+
+@media screen and (max-width:800px) {
+  .tooltip .tooltiptext {
+    width: 25vw;
+    top: -12vh;
+  left: 1vw;
+
+  }
+  .tooltiptext{
+  font-size: 1.6vw;
+}
 
   .wrapper {
   display: inline-grid;
@@ -105,7 +147,15 @@ p1 {
 }
 
 @media screen and (max-width:600px) {
-
+  .tooltip .tooltiptext {
+    width: 30vw;
+    top: -12vh;
+  left: 3vw;
+  }
+  
+  .tooltiptext{
+  font-size: 2vw;
+}
 
 .wrapper {
   display: inline-grid;
@@ -229,8 +279,12 @@ p1 {
   </div>
 
   <div class="box3 w3-theme-l4">
-    <h2 style="text-align:center; font-size:3rem">D.B.H</h2>
-
+    <h2 style="text-align:center; font-size:3rem">D.B.H<div class="tooltip"><sup><b>?</b></sup>
+      
+      <span class="tooltiptext">Diameter at breast height, or DBH, is the standard for measuring trees. DBH refers to the tree diameter measured at 4.5 feet above the ground 
+        <br><b><a href='https://www.portland.gov/trees/tree-care-and-resources/how-measure-tree#:~:text=Diameter%20at%20breast%20height%2C%20or,4.5%20feet%20above%20the%20ground.'>More information here</a></b>
+      </span></div></h2>
+    
     <input type="number" inputmode="decimal" id="dbh" class="center-block" margin="margin: 0px 0px">
     <br>
 
