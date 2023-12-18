@@ -6,6 +6,74 @@
 <head> 
 <style>
 
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 51px;
+  left: 40%;
+  top: -2%;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 39px;
+  width: 39px;
+  left: 2px;
+  bottom: 6px;
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+ 
+}
+
+input:checked + .slider {
+  background-color: #36A551;
+  content:"circumference"
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #36A551;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(45px);
+  -ms-transform: translateX(45px);
+  transform: translateX(45px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 #TreeName{
  width:250px;   
 }
@@ -98,7 +166,7 @@ td {
   visibility: hidden;
   width: 15vw;
   height:auto;
-  background-color: #4F7942;
+  background-color: #36A551;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -283,11 +351,16 @@ td {
   </div>
 
   <div class="box3 w3-theme-l4">
-    <h2 style="text-align:center; font-size:3rem">D.B.H<div class="tooltip"><sup><b>?</b></sup>
+    <h2 id="SwapText" style="text-align:center; font-size:3rem">D.B.H<div class="tooltip"><sup><b>?</b></sup>
       
       <span class="tooltiptext">Diameter at breast height, or DBH, is the standard for measuring trees. DBH refers to the tree diameter measured at 4.5 feet above the ground 
         <br><b><a href='https://www.portland.gov/trees/tree-care-and-resources/how-measure-tree#:~:text=Diameter%20at%20breast%20height%2C%20or,4.5%20feet%20above%20the%20ground.'>More information here</a></b>
       </span></div></h2>
+
+      <label class="switch">
+        <input type="checkbox" id="DBHToggle" onchange="SwitchText()">
+        <span class="slider round"></span>
+      </label>
     
     <input type="number" inputmode="decimal" id="dbh" class="center-block" margin="margin: 0px 0px">
     <br>
@@ -307,7 +380,7 @@ td {
    
 
       
-        <div class="tablebox w3-theme-d1">
+        <div class="tablebox w3-theme-d1" style="color: #36A551;">
         <table id="posts" >
             <thead>
               <tr>
@@ -28823,6 +28896,20 @@ justnames.forEach(function(item){
 
 });
 
+function SwitchText(){
+
+  if (document.getElementById('DBHToggle').checked===false){
+    document.getElementById('SwapText').innerHTML='D.B.H<div class="tooltip"><sup><b>?</b></sup> <span class="tooltiptext">Diameter at breast height, or DBH, is the standard for measuring trees. DBH refers to the tree diameter measured at 4.5 feet above the ground <br><b><a href="https://www.portland.gov/trees/tree-care-and-resources/how-measure-tree#:~:text=Diameter%20at%20breast%20height%2C%20or,4.5%20feet%20above%20the%20ground."More information here</a></b> </span></div>'
+
+    }else{
+
+      document.getElementById('SwapText').textContent="Trunk Circumference"
+        }
+
+    checkVals()
+
+
+}
 function ExportCSV(){
   csvContent='Tree Name, Prediction, DBH, Result, Units \n' 
 
@@ -28864,7 +28951,13 @@ function checkVals(){
          tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
          currmax=parseFloat(tempobj.max)
          currmin=parseFloat(tempobj.min)
-         currval=parseFloat(checkdbh.value)
+         if (document.getElementById('DBHToggle').checked===false){
+          currval=parseFloat(checkdbh.value)
+         }else{
+
+          currval=parseFloat(checkdbh.value)/Math.PI
+         }
+         
          if ( isNaN(currval) ||  ( currval < currmax && currval > currmin)){
             
             document.getElementById("warning").textContent=""
@@ -28929,7 +29022,13 @@ const outputArray=[]
 function dbhCalculate() {
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
-    var dbh = parseFloat(document.getElementById('dbh').value);
+
+    if (document.getElementById('DBHToggle').checked===false){
+      var dbh = parseFloat(document.getElementById('dbh').value);
+    }else{
+
+      var dbh = parseFloat(document.getElementById('dbh').value)/Math.PI;
+    }    
 
     if (!isNaN(dbh)){
     for (let i = 0; i < regionData.length; i++) {
