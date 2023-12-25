@@ -343,6 +343,8 @@ td {
    <div class="box1 w3-theme-l4">
       <h2 style="text-align:center; font-size:3rem">Input Tree Species</h2>
     <select id="TreeName" class="center-block" margin="margin: 0px 0px" target="_top" ></select>
+    <h2 style="text-align:center; font-size:1.5rem">Common Names: </h2>
+    <p id="commonNames" style="text-align:center; font-size: 1rem">'sweet acacia'</p>
    </div>
 
 
@@ -28384,515 +28386,686 @@ const coeffs = [
 
 justnames = [
   {
-    LatinName: "Acacia farnesiana"
+    LatinName: "Acacia farnesiana",
+    CommonName: "'sweet acacia'"
   },
   {
-    LatinName: "Acacia melanoxylon"
+    LatinName: "Acacia melanoxylon",
+    CommonName: "' blackwood acacia', ' black sally', ' Tasmanian blackwood', ' silver wattle', 'blackwood', ' black wattle', ' Paluma blackwood', ' sally wattle', ' Australian blackwood'"
   },
   {
-    LatinName: "Acacia salicina"
+    LatinName: "Acacia salicina",
+    CommonName: "' Broughton-willow', ' Murray-willow', ' cooba', ' willow wattle', ' willow acacia', 'Broughton willow wattle', 'cooba', ' sally wattle', 'willow acacia'"
   },
   {
-    LatinName: "Acer macrophyllum"
+    LatinName: "Acer macrophyllum",
+    CommonName: "' Pacific maple', 'Oregon maple', ' big-leaf maple', 'bigleaf maple'"
   },
   {
-    LatinName: "Acer negundo"
+    LatinName: "Acer negundo",
+    CommonName: "' ash-leaf maple', ' California boxelder', 'three-leaf maple', 'western boxelder', ' Manitoba maple', ' ashleaf maple', 'boxelder', ' box-elder', ' boxelder maple', ' boxelder', ' box elder', ' three-leaf maple'"
   },
   {
-    LatinName: "Acer palmatum"
+    LatinName: "Acer palmatum",
+    CommonName: "'Japanese maple', ' Japanese maple', 'smooth Japanese maple'"
   },
   {
-    LatinName: "Acer platanoides"
+    LatinName: "Acer platanoides",
+    CommonName: "'Norway maple'"
   },
   {
-    LatinName: "Acer rubrum"
+    LatinName: "Acer rubrum",
+    CommonName: "'red maple'"
   },
   {
-    LatinName: "Acer saccharinum"
+    LatinName: "Acer saccharinum",
+    CommonName: "' white maple', 'silver maple', 'soft maple', ' silver maple'"
   },
   {
-    LatinName: "Acer saccharum"
+    LatinName: "Acer saccharum",
+    CommonName: "'sugar maple'"
   },
   {
-    LatinName: "Aesculus hippocastanum"
+    LatinName: "Aesculus hippocastanum",
+    CommonName: "'horse-chestnut', 'horse chestnut'"
   },
   {
-    LatinName: "Bauhinia x blakeana"
+    LatinName: "Bauhinia x blakeana",
+    CommonName: "'Hong Kong orchidtree'"
   },
   {
-    LatinName: "Betula nigra"
+    LatinName: "Betula nigra",
+    CommonName: "'river birch', 'red birch', ' river birch'"
   },
   {
-    LatinName: "Betula pendula"
+    LatinName: "Betula pendula",
+    CommonName: "' silver birch', ' weeping birch', 'European white birch'"
   },
   {
-    LatinName: "Brachychiton populneum "
+    LatinName: "Brachychiton populneum ",
+    CommonName: "'whiteflower kurrajong'"
   },
   {
-    LatinName: "Butia capitata"
+    LatinName: "Butia capitata",
+    CommonName: "'South American jelly palm', ' jelly palm', ' pindo palm'"
   },
   {
-    LatinName: "Callistemon citrinus"
+    LatinName: "Callistemon citrinus",
+    CommonName: "'crimson bottlebrush'"
   },
   {
-    LatinName: "Calocedrus decurrens"
+    LatinName: "Calocedrus decurrens",
+    CommonName: "' California post-cedar', 'incense cedar', ' incense-cedar', ' bastard-cedar', 'California incense-cedar'"
   },
   {
-    LatinName: "Calophyllum inophyllum"
+    LatinName: "Calophyllum inophyllum",
+    CommonName: "' beach touriga', ' beach calophyllum', ' Alexandrian laurel', ' Indian-laurel', ' balltree', ' beautyleaf', 'Alexandrian laurel', ' Indian doomba oiltree', 'laurelwood', ' Alexandrian-laurel', 'mastwood', ' tacamahac-tree', ' satin touriga', ' Borneo-mahogany'"
   },
   {
-    LatinName: "Carpinus betulus 'Fastigiata'"
+    LatinName: "Carpinus betulus 'Fastigiata'",
+    CommonName: "'European hornbeam'"
   },
   {
-    LatinName: "Carya illinoinensis"
+    LatinName: "Carya illinoinensis",
+    CommonName: "' nuez encarcelada', ' pecan', ' nogal morado', 'pecan', 'pecanier', 'Pecan'"
   },
   {
-    LatinName: "Cassia x nealiae"
+    LatinName: "Cassia x nealiae",
+    CommonName: "'rainbow showertree'"
   },
   {
-    LatinName: "Casuarina equisetifolia"
+    LatinName: "Casuarina equisetifolia",
+    CommonName: "' horsetailtree', 'beach sheoak', ' Australian beefwood', ' beach casuarina', ' horsetail she-oak', ' coastal she-oak', 'whistlingtree', ' beefwoodtree', ' Australian pine', ' coast she-oak', 'horsetail casuarina', ' beach-oak', ' ironwood', ' whistling-pine', ' common ironwood', ' beach she-oak', ' Australian-pine'"
   },
   {
-    LatinName: "Catalpa speciosa"
+    LatinName: "Catalpa speciosa",
+    CommonName: "' cigartree', ' catawba', 'northern catalpa', ' northern catalpa', 'western catalpa', ' Indian-bean'"
   },
   {
-    LatinName: "Cedrus deodara"
+    LatinName: "Cedrus deodara",
+    CommonName: "' deodar cedar', 'Himalayan cedar', 'Deodar cedar', ' deodar'"
   },
   {
-    LatinName: "Celtis laevigata"
+    LatinName: "Celtis laevigata",
+    CommonName: "'southern hackberry', 'sugarberry', ' sugarberry', ' sugar hackberry'"
   },
   {
-    LatinName: "Celtis occidentalis"
+    LatinName: "Celtis occidentalis",
+    CommonName: "'western hackberry', 'Mississippi hackberry', ' common hackberry', ' hackberry', ' American hackberry', 'common hackberry', ' northern hackberry', ' nettletree', ' sugarberry'"
   },
   {
-    LatinName: "Celtis sinensis"
+    LatinName: "Celtis sinensis",
+    CommonName: "' Chinese hackberry', ' Japanese hackberry', 'Japanese hackberry', 'Chinese hackberry', 'Chinese nettletree'"
   },
   {
-    LatinName: "Ceratonia siliqua"
+    LatinName: "Ceratonia siliqua",
+    CommonName: "St. John's bread, 'locust-bean', ' carob', St. John's-bread"
   },
   {
-    LatinName: "Cercis canadensis"
+    LatinName: "Cercis canadensis",
+    CommonName: "' eastern redbud', ' Judastree', 'redbud', 'eastern redbud'"
   },
   {
-    LatinName: "Chilopsis linearis"
+    LatinName: "Chilopsis linearis",
+    CommonName: "'desert willow', 'desert-willow'"
   },
   {
-    LatinName: "Cinnamomum camphora"
+    LatinName: "Cinnamomum camphora",
+    CommonName: "' camphor-laurel', 'Japanese camphor', ' camphor laurel', ' camphortree', ' Japanese camphortree', ' camphor', 'camphortree', ' camphor tree'"
   },
   {
-    LatinName: "Citharexylum spinosum"
+    LatinName: "Citharexylum spinosum",
+    CommonName: "'spiny fiddlewood', ' fiddlewood', ' Florida fiddlewood'"
   },
   {
-    LatinName: "Cocos nucifera"
+    LatinName: "Cocos nucifera",
+    CommonName: "'coconut palm', 'coconut', 'Coconut', ' copra', ' coconut palm'"
   },
   {
-    LatinName: "Conocarpus erectus var. argenteus"
+    LatinName: "Conocarpus erectus var. argenteus",
+    CommonName: "'buttonwood'"
   },
   {
-    LatinName: "Cordia subcordata"
+    LatinName: "Cordia subcordata",
+    CommonName: "' island-walnut', ' mareer', ' beach cordial', 'kou', 'sea trumpet', ' marer'"
   },
   {
-    LatinName: "Cornus florida"
+    LatinName: "Cornus florida",
+    CommonName: "' white dogwood', ' flowering dogwood', ' eastern flowering dogwood', ' dogwood', 'American-boxwood', 'flowering dogwood'"
   },
   {
-    LatinName: "Crataegus spp."
+    LatinName: "Crataegus spp.",
+    CommonName: "'hawthorn bushes'"
   },
   {
-    LatinName: "Crataegus x lavallei"
+    LatinName: "Crataegus x lavallei",
+    CommonName: "'carriere hawthorn', 'hyrbid cockspurthorn', 'Lavalle hawthorn'"
   },
   {
-    LatinName: "Cupaniopsis anacardioides"
+    LatinName: "Cupaniopsis anacardioides",
+    CommonName: "'carrotwood', 'green-leaf-tamarind', ' carrotwood', ' cashew-leaf cupania', ' carrot weed', ' beach-tamarind'"
   },
   {
-    LatinName: "Delonix regia"
+    LatinName: "Delonix regia",
+    CommonName: "' peacock-flower', ' royal poinciana', ' flametree', 'flamboyant', 'royal poinciana', ' flame-of-the-forest'"
   },
   {
-    LatinName: "Elaeagnus angustifolia"
+    LatinName: "Elaeagnus angustifolia",
+    CommonName: "' Russian olive', ' trebizond-date', 'Trebizond-date', ' Russian-olive', 'Russian-olive', ' oleaster', 'Russian olive'"
   },
   {
-    LatinName: "Elaeodendron orientale"
+    LatinName: "Elaeodendron orientale",
+    CommonName: "'false olive'"
   },
   {
-    LatinName: "Eriobotrya japonica"
+    LatinName: "Eriobotrya japonica",
+    CommonName: "'Loquat', 'Japanese-medlar', ' Japanese medlar', ' loquat', 'loquat'"
   },
   {
-    LatinName: "Eucalyptus ficifolia"
+    LatinName: "Eucalyptus ficifolia",
+    CommonName: "'red flowering gum tree'"
   },
   {
-    LatinName: "Eucalyptus globulus"
+    LatinName: "Eucalyptus globulus",
+    CommonName: "'southern blue gum', ' blue gum', ' bluegum eucalyptus', 'Tasmanian bluegum', ' Victorian blue gum'"
   },
   {
-    LatinName: "Eucalyptus microtheca"
+    LatinName: "Eucalyptus microtheca",
+    CommonName: "' flooded-box', 'coolabah', 'flooded-box', ' coolabah', 'western coolibah', ' coolibah'"
   },
   {
-    LatinName: "Eucalyptus sideroxylon"
+    LatinName: "Eucalyptus sideroxylon",
+    CommonName: "' three-fruit red ironbark', ' red ironbark', 'black ironbark', 'red ironbark', ' mugga ironbark'"
   },
   {
-    LatinName: "Fagus sylvatica"
+    LatinName: "Fagus sylvatica",
+    CommonName: "'beech', 'European beech'"
   },
   {
-    LatinName: "Ficus benjamina"
+    LatinName: "Ficus benjamina",
+    CommonName: "'weeping fig', ' weeping fig', ' Malayan banyan', ' Java fig', ' benjamin-tree', ' benjamin fig', ' weeping-laurel', ' tropic-laurel', ' oval-leaf figtree', 'Javatree'"
   },
   {
-    LatinName: "Ficus thonningii"
+    LatinName: "Ficus thonningii",
+    CommonName: "'Chinese banyan', 'small figtree'"
   },
   {
-    LatinName: "Filicium decipiens"
+    LatinName: "Filicium decipiens",
+    CommonName: "'ferntree'"
   },
   {
-    LatinName: "Fraxinus americana"
+    LatinName: "Fraxinus americana",
+    CommonName: "'American ash', ' white ash', 'white ash'"
   },
   {
-    LatinName: "Fraxinus angustifolia"
+    LatinName: "Fraxinus angustifolia",
+    CommonName: "'desert ash', ' narrow-leaf ash'"
   },
   {
-    LatinName: "Fraxinus angustifolia 'Raywood'"
+    LatinName: "Fraxinus angustifolia 'Raywood'",
+    CommonName: "'raywood ash', 'claret ash'"
   },
   {
-    LatinName: "Fraxinus excelsior 'Hessei'"
+    LatinName: "Fraxinus excelsior 'Hessei'",
+    CommonName: "'one-leaved ash', 'simple-leaved ash'"
   },
   {
-    LatinName: "Fraxinus holotricha"
+    LatinName: "Fraxinus holotricha",
+    CommonName: "'German ash', 'moraine ash'"
   },
   {
-    LatinName: "Fraxinus latifolia"
+    LatinName: "Fraxinus latifolia",
+    CommonName: "'Oregon ash'"
   },
   {
-    LatinName: "Fraxinus pennsylvanica"
+    LatinName: "Fraxinus pennsylvanica",
+    CommonName: "' downy ash', 'green ash', ' red ash'"
   },
   {
-    LatinName: "Fraxinus pennsylvanica 'Marshall'"
+    LatinName: "Fraxinus pennsylvanica 'Marshall'",
+    CommonName: "'Marshall ash', 'Marshall seedless ash'"
   },
   {
-    LatinName: "Fraxinus uhdei"
+    LatinName: "Fraxinus uhdei",
+    CommonName: "'shamel ash'"
   },
   {
-    LatinName: "Fraxinus velutina"
+    LatinName: "Fraxinus velutina",
+    CommonName: "' Arizon ash', ' velvet ash', 'desert ash', 'velvet ash'"
   },
   {
-    LatinName: "Fraxinus velutina 'Modesto'"
+    LatinName: "Fraxinus velutina 'Modesto'",
+    CommonName: "'velvet ash', 'Arizona ash', Modesto ash'"
   },
   {
-    LatinName: "Ginkgo biloba"
+    LatinName: "Ginkgo biloba",
+    CommonName: "' common ginkgo', 'ginkgo', 'maidenhair tree', ' maidenhair-tree'"
   },
   {
-    LatinName: "Gleditsia triacanthos"
+    LatinName: "Gleditsia triacanthos",
+    CommonName: "' sweet-bean', 'honey-locust', 'three-thorn-acacia', ' sweet-locust', 'honeylocust', ' honey-locust', ' honey locust', ' honeylocust', ' common honeylocust'"
   },
   {
-    LatinName: "Gymnocladus dioicus"
+    LatinName: "Gymnocladus dioicus",
+    CommonName: "'Kentucky coffeetree'"
   },
   {
-    LatinName: "Ilex opaca"
+    LatinName: "Ilex opaca",
+    CommonName: "'American holly', ' white holly'"
   },
   {
-    LatinName: "Ilex paraguariensis"
+    LatinName: "Ilex paraguariensis",
+    CommonName: "' Paraguayan-tea', ' mate', 'Paraguay tea', 'mate', ' Paraguay tea', 'Mate', 'Brazilian-tea'"
   },
   {
-    LatinName: "Jacaranda mimosifolia"
+    LatinName: "Jacaranda mimosifolia",
+    CommonName: "'black poui'"
   },
   {
-    LatinName: "Juglans nigra"
+    LatinName: "Juglans nigra",
+    CommonName: "'black walnut', 'noyer noir', ' black walnut'"
   },
   {
-    LatinName: "Juniperus virginiana"
+    LatinName: "Juniperus virginiana",
+    CommonName: "' red juniper', ' red-cedar', ' eastern red-cedar', ' pencil-cedar', 'eastern red-cedar', ' eastern redcedar', 'red cedar juniper', 'eastern redcedar', ' Virginia juniper'"
   },
   {
-    LatinName: "Juniperus virginiana var. silicicola"
+    LatinName: "Juniperus virginiana var. silicicola",
+    CommonName: "'Southern red cedar', 'sand cedar', 'coast juniper'"
   },
   {
-    LatinName: "Koelreuteria elegans"
+    LatinName: "Koelreuteria elegans",
+    CommonName: "' flamegold', 'golden rain tree', 'flamegold'"
   },
   {
-    LatinName: "Koelreuteria paniculata"
+    LatinName: "Koelreuteria paniculata",
+    CommonName: "' pride-of-India', ' varnishtree', 'goldenrain tree', 'goldenrain-tree'"
   },
   {
-    LatinName: "Lagerstroemia indica"
+    LatinName: "Lagerstroemia indica",
+    CommonName: "' crepe-myrtle', ' crape-myrtle', 'crapemyrtle', 'crepeflower'"
   },
   {
-    LatinName: "Lagerstroemia speciosa"
+    LatinName: "Lagerstroemia speciosa",
+    CommonName: "' pride-of-India', 'pride of India', 'queen's-flower', 'queen's crape-myrtle'"
   },
   {
-    LatinName: "Lagerstroemia spp."
+    LatinName: "Lagerstroemia spp.",
+    CommonName: "'crape myrtles'"
   },
   {
-    LatinName: "Liquidambar styraciflua"
+    LatinName: "Liquidambar styraciflua",
+    CommonName: "'red-gum', ' sweet-gum', ' American-storax', 'sweetgum', ' satin-walnut', ' alligator-wood'"
   },
   {
-    LatinName: "Liriodendron tulipifera"
+    LatinName: "Liriodendron tulipifera",
+    CommonName: "' tuliptree', ' tulip poplar', ' bois-jaune', ' canary whitewood', ' yellow-poplar', ' yellow poplar', 'tuliptree', ' tulip-poplar', 'tulip-poplar', 'yellow-poplar'"
   },
   {
-    LatinName: "Magnolia grandiflora"
+    LatinName: "Magnolia grandiflora",
+    CommonName: "' bull bay', 'southern magnolia', ' laurier tulipier', ' bull-bay'"
   },
   {
-    LatinName: "Malus angustifolia"
+    LatinName: "Malus angustifolia",
+    CommonName: "'southern crab apple'"
   },
   {
-    LatinName: "Malus spp."
+    LatinName: "Malus spp.",
+    CommonName: "'apple trees'"
   },
   {
-    LatinName: "Melaleuca quinquenervia"
+    LatinName: "Melaleuca quinquenervia",
+    CommonName: "' coastal teatree', ' melaleuca', 'punktree', ' paperbark', ' niaouli', ' broadleaf paperbark', ' bottle brush tree', ' punktree', ' belbowrie', ' cajeput tree', 'broadleaf teatree', ' five-vein paperbark', ' paperbark teatree'"
   },
   {
-    LatinName: "Metrosideros excelsa"
+    LatinName: "Metrosideros excelsa",
+    CommonName: "'New Zealand Christmastree'"
   },
   {
-    LatinName: "Morus alba"
+    LatinName: "Morus alba",
+    CommonName: "'Mulberry', ' white', 'white mulberry', ' white mulberry', ' Russian mulberry', ' mulberry', 'silkworm mulberry'"
   },
   {
-    LatinName: "Morus spp."
+    LatinName: "Morus spp.",
+    CommonName: "'Seerfishes n.e.i.', 'seerfish'"
   },
   {
-    LatinName: "Olea europaea"
+    LatinName: "Olea europaea",
+    CommonName: "' oliveleaf', ' olive', 'small-fruit olive', 'olive'"
   },
   {
-    LatinName: "Parkinsonia aculeata"
+    LatinName: "Parkinsonia aculeata",
+    CommonName: "'retaima', ' Mexican paloverde', 'Jerusalem thorn', ' Barbados flowerfence', ' Jerusalem-thorn', ' horse-bean'"
   },
   {
-    LatinName: "Parkinsonia florida"
+    LatinName: "Parkinsonia florida",
+    CommonName: "'blue paloverde'"
   },
   {
-    LatinName: "Phoenix canariensis"
+    LatinName: "Phoenix canariensis",
+    CommonName: "'Canary Island date palm', ' Canary date palm', ' Canary Island date palm', 'Canary Island palm'"
   },
   {
-    LatinName: "Phoenix dactylifera"
+    LatinName: "Phoenix dactylifera",
+    CommonName: "' date', 'date palm', 'Date'"
   },
   {
-    LatinName: "Picea pungens"
+    LatinName: "Picea pungens",
+    CommonName: "'blue spruce', ' blue spruce', ' Colorado blue spruce', 'Colorado spruce', 'silver spruce'"
   },
   {
-    LatinName: "Pinus brutia"
+    LatinName: "Pinus brutia",
+    CommonName: "'Turkish pine', 'Calabrian pine', ' Turkish pine', ' Calabrian pine'"
   },
   {
-    LatinName: "Pinus canariensis"
+    LatinName: "Pinus canariensis",
+    CommonName: "'Canary Island pine', ' Canary den'"
   },
   {
-    LatinName: "Pinus contorta subsp. bolanderi"
+    LatinName: "Pinus contorta subsp. bolanderi",
+    CommonName: "'shore pine', 'Bolander beach pine', 'lodgepole pine'"
   },
   {
-    LatinName: "Pinus echinata"
+    LatinName: "Pinus echinata",
+    CommonName: "' shortleaf pine', ' southern yellow pine', ' shortleaf yellow pine', 'shortleaf pine', ' Arkansas pine', 'southern pine', ' shortstraw pine', 'yellow pine'"
   },
   {
-    LatinName: "Pinus edulis"
+    LatinName: "Pinus edulis",
+    CommonName: "'two-needle pinyon', ' two-leaf pinyon',  'nut pine', 'American piñon', ' pinyon pine', ' Colorado pinyon', ' pignolia', ' twoneedle pinyon', ' pinyon', 'twoneedle pinyon'"
   },
   {
-    LatinName: "Pinus eldarica"
+    LatinName: "Pinus eldarica",
+    CommonName: "'Mondell pine'"
   },
   {
-    LatinName: "Pinus elliottii"
+    LatinName: "Pinus elliottii",
+    CommonName: "'slash pine', 'American pitch pine', ' slash pine', ' longleaf pitch pine', ' swamp pine'"
   },
   {
-    LatinName: "Pinus halepensis"
+    LatinName: "Pinus halepensis",
+    CommonName: "'aleppo pine', ' Aleppo pine', 'Jerusalem pine'"
   },
   {
-    LatinName: "Pinus nigra"
+    LatinName: "Pinus nigra",
+    CommonName: "'European black pine', 'black pine', 'Austrian pine', ' Austrian pine', ' Australian pine'"
   },
   {
-    LatinName: "Pinus ponderosa"
+    LatinName: "Pinus ponderosa",
+    CommonName: "' yellow pine', 'western yellow pine', ' rock pine', 'ponderosa pine', ' blackjack pine', , ' bull pine', ' ponderosa pine'"
   },
   {
-    LatinName: "Pinus radiata"
+    LatinName: "Pinus radiata",
+    CommonName: "'insignis pine', ' Monterey pine', ' insignis pine', ' radiata pine', 'Monterey pine'"
   },
   {
-    LatinName: "Pinus strobus"
+    LatinName: "Pinus strobus",
+    CommonName: "' northern white pine', ' eastern white pine', ' Weymouth pine', ' white pine', 'white pine', 'eastern white pine', ' soft pine'"
   },
   {
-    LatinName: "Pinus sylvestris"
+    LatinName: "Pinus sylvestris",
+    CommonName: "'Scotch pine', ' Scots pine', 'Scots pine'"
   },
   {
-    LatinName: "Pinus taeda"
+    LatinName: "Pinus taeda",
+    CommonName: "'loblolly pine'"
   },
   {
-    LatinName: "Pinus thunbergiana"
+    LatinName: "Pinus thunbergiana",
+    CommonName: "'black pine', 'Japanese black pine', 'Japanese pine'"
   },
   {
-    LatinName: "Pistacia chinensis"
+    LatinName: "Pistacia chinensis",
+    CommonName: "'Chinese pistachio', ' Chinese pistache', 'Chinese pistache'"
   },
   {
-    LatinName: "Pittosporum undulatum"
+    LatinName: "Pittosporum undulatum",
+    CommonName: "'sweet pittosporum', ' white-holly', 'Australian cheesewood', ' Australian cheesewood', ' Victorian-box', ' wave-leaf pittosporum', ' engraver-wood', ' orange-berry pittosporum', ' mock orange', ' Victorian box', ' sweet pittosporum', ' cheesewood', 'Victorian laurel'"
   },
   {
-    LatinName: "Platanus occidentalis"
+    LatinName: "Platanus occidentalis",
+    CommonName: "' eastern sycamore', ' buttonball', ' American planetree', ' American plane', 'American sycamore', 'sycamore', ' sycamore', ' American sycamore', ' buttonwood', ' buttontree'"
   },
   {
-    LatinName: "Platanus racemosa"
+    LatinName: "Platanus racemosa",
+    CommonName: "'California sycamore', ' western sycamore'"
   },
   {
-    LatinName: "Platanus x acerifolia"
+    LatinName: "Platanus x acerifolia",
+    CommonName: "'London plane tree'"
   },
   {
-    LatinName: "Platycladus orientalis"
+    LatinName: "Platycladus orientalis",
+    CommonName: "' Chinese-arborvitae', ' Oriental-arborvitae', 'Chinese thuja', 'oriental arborvitae', 'Oriental arborvitae'"
   },
   {
-    LatinName: "Podocarpus macrophyllus"
+    LatinName: "Podocarpus macrophyllus",
+    CommonName: "'yew plum pine', 'big-leaf podocarp'"
   },
   {
-    LatinName: "Populus angustifolia"
+    LatinName: "Populus angustifolia",
+    CommonName: "'narrow-leaf cottonwood', 'narrowleaf cottonwood', ' willow cottonwood', ' mountain cottonwood'"
   },
   {
-    LatinName: "Populus balsamifera subsp. trichocarpa"
+    LatinName: "Populus balsamifera subsp. trichocarpa",
+    CommonName: "'black cottonwood', 'western balsam-poplar',  'California poplar'"
   },
   {
-    LatinName: "Populus deltoides"
+    LatinName: "Populus deltoides",
+    CommonName: "' necklace poplar', 'plains cottonwood', ' common cottonwood', ' eastern cottonwood', ' match poplar', 'eastern cottonwood'"
   },
   {
-    LatinName: "Populus fremontii"
+    LatinName: "Populus fremontii",
+    CommonName: "'Fremont cottonwood', 'Fremont's cottonwood', ' cottonwood'"
   },
   {
-    LatinName: "Populus sargentii"
+    LatinName: "Populus sargentii",
+    CommonName: "'plains cottonwood'"
   },
   {
-    LatinName: "Prosopis chilensis"
+    LatinName: "Prosopis chilensis",
+    CommonName: "'algarrobo', ' Chilean algarrobo', 'Chilean mesquite'"
   },
   {
-    LatinName: "Prunus caroliniana"
+    LatinName: "Prunus caroliniana",
+    CommonName: "' laurel cherry', ' wild orange', ' mock orange', 'Carolina laurelcherry', ' Carolina laurel cherry', 'cherry-laurel'"
   },
   {
-    LatinName: "Prunus cerasifera"
+    LatinName: "Prunus cerasifera",
+    CommonName: "' plum', 'cherry plum', ' myrobalan-plum tree', 'myrobalan plum', ' ciruela chabacana', ' cherry plum', 'Cherry'"
   },
   {
-    LatinName: "Prunus cerasifera "
+    LatinName: "Prunus cerasifera ",
+    CommonName: "' plum', 'cherry plum', ' myrobalan-plum tree', 'myrobalan plum', ' ciruela chabacana', ' cherry plum', 'Cherry'"
   },
   {
-    LatinName: "Prunus cerasifera cvs."
+    LatinName: "Prunus cerasifera cvs.",
+    CommonName: "'cherry plum', 'myrobalan plum'"
   },
   {
-    LatinName: "Prunus serrulata"
+    LatinName: "Prunus serrulata",
+    CommonName: "'Japanese flowering cherry', ' Oriental cherry', 'Japanese cherry'"
   },
   {
-    LatinName: "Prunus spp."
+    LatinName: "Prunus spp.",
+    CommonName: "'plum trees'"
   },
   {
-    LatinName: "Prunus yedoensis"
+    LatinName: "Prunus yedoensis",
+    CommonName: "' Potomac cherry', 'Tokyo cherry', ' Yoshino cherry', 'Yoshino cherry'"
   },
   {
-    LatinName: "Pseudotsuga menziesii"
+    LatinName: "Pseudotsuga menziesii",
+    CommonName: "' Douglas-fir', 'Douglas-fir', ' Douglas spruce', ' Oregon pine', 'red fir'"
   },
   {
-    LatinName: "Pyrus calleryana"
+    LatinName: "Pyrus calleryana",
+    CommonName: "'callery pear', ' Bradford pear', 'Callery pear'"
   },
   {
-    LatinName: "Pyrus calleryana 'Bradford'"
+    LatinName: "Pyrus calleryana 'Bradford'",
+    CommonName: "'Bradford pear', 'Callery pear'"
   },
   {
-    LatinName: "Pyrus calleryana cvs."
+    LatinName: "Pyrus calleryana cvs.",
+    CommonName: "'callery pear'"
   },
   {
-    LatinName: "Pyrus kawakamii"
+    LatinName: "Pyrus kawakamii",
+    CommonName: "'evergreen pear tree'"
   },
   {
-    LatinName: "Pyrus spp."
+    LatinName: "Pyrus spp.",
+    CommonName: "'pear trees'"
   },
   {
-    LatinName: "Quercus agrifolia"
+    LatinName: "Quercus agrifolia",
+    CommonName: "'California live oak', ' California live oak', 'coast live oak'"
   },
   {
-    LatinName: "Quercus alba"
+    LatinName: "Quercus alba",
+    CommonName: "'white oak', 'stave oak', ' white oak'"
   },
   {
-    LatinName: "Quercus ilex"
+    LatinName: "Quercus ilex",
+    CommonName: "'evergreen oak', ' holm oak', ' holly oak', 'holly oak'"
   },
   {
-    LatinName: "Quercus laurifolia"
+    LatinName: "Quercus laurifolia",
+    CommonName: "'laurel oak', ' swamp laurel oak'"
   },
   {
-    LatinName: "Quercus lobata"
+    LatinName: "Quercus lobata",
+    CommonName: "' California white oak', 'roble', 'valley oak', ' valley oak'"
   },
   {
-    LatinName: "Quercus macrocarpa"
+    LatinName: "Quercus macrocarpa",
+    CommonName: "' mossy-cup oak', 'bur oak'"
   },
   {
-    LatinName: "Quercus nigra"
+    LatinName: "Quercus nigra",
+    CommonName: "' water oak', 'water oak', 'possum oak'"
   },
   {
-    LatinName: "Quercus palustris"
+    LatinName: "Quercus palustris",
+    CommonName: "'pin oak'"
   },
   {
-    LatinName: "Quercus phellos"
+    LatinName: "Quercus phellos",
+    CommonName: "'willow oak'"
   },
   {
-    LatinName: "Quercus rubra"
+    LatinName: "Quercus rubra",
+    CommonName: "' red oak', 'northern red oak'"
   },
   {
-    LatinName: "Quercus shumardii"
+    LatinName: "Quercus shumardii",
+    CommonName: "' Shumard red oak', ' swamp red oak', ' spotted oak', ' Shumard oak', 'southern red oak', 'Shumard's oak'"
   },
   {
-    LatinName: "Quercus virginiana"
+    LatinName: "Quercus virginiana",
+    CommonName: "'southern live oak', ' live oak', 'live oak'"
   },
   {
-    LatinName: "Rhus lancea"
+    LatinName: "Rhus lancea",
+    CommonName: "'African sumac'"
   },
   {
-    LatinName: "Robinia pseudoacacia"
+    LatinName: "Robinia pseudoacacia",
+    CommonName: "'yellow locust', ' false acacia', 'black locust', ' black locust'"
   },
   {
-    LatinName: "Sabal palmetto"
+    LatinName: "Sabal palmetto",
+    CommonName: "' cabbage palm', ' blue palmetto', 'cabbage palmetto', ' cabbage palmetto', 'cabbage palm'"
   },
   {
-    LatinName: "Samanea saman"
+    LatinName: "Samanea saman",
+    CommonName: "'raintree', ' raintree', ' monkeypod', ' French-tamarind', 'cow-tamarind'"
   },
   {
-    LatinName: "Schinus molle"
+    LatinName: "Schinus molle",
+    CommonName: "' molle del Peru', 'Peruvian peppertree', 'peppertree', ' California peppertree', ' American pepper', ' Peruvian-mastictree', ' peppertree', ' Peruvian peppertree', ' pepper tree', ' false pepper'"
   },
   {
-    LatinName: "Schinus terebinthifolius"
+    LatinName: "Schinus terebinthifolius",
+    CommonName: "'Brazilian peppertree', 'warui', ' Brazilian peppertree', ' Florida holly', ' Christmasberry', ' Christmas berry', 'Brazilian pepper', ' Brazilian pepper-tree'"
   },
   {
-    LatinName: "Sequoia sempervirens"
+    LatinName: "Sequoia sempervirens",
+    CommonName: "'coastal redwood', 'redwood', ' California redwood', ' redwood', ' coast redwood'"
   },
   {
-    LatinName: "Swietenia mahagoni"
+    LatinName: "Swietenia mahagoni",
+    CommonName: "' West Indian mahogany', 'West Indian mahogany', 'Cuban mahogany', ' Spanish mahogany'"
   },
   {
-    LatinName: "Syagrus romanzoffiana"
+    LatinName: "Syagrus romanzoffiana",
+    CommonName: "'giriba palm', 'queen palm', ' queen palm'"
   },
   {
-    LatinName: "Tabebuia aurea"
+    LatinName: "Tabebuia aurea",
+    CommonName: "' tree-of-gold', ' silver trumpet-tree', ' yellow tabebuia', 'Caribbean trumpet-tree'"
   },
   {
-    LatinName: "Tabebuia heterophylla"
+    LatinName: "Tabebuia heterophylla",
+    CommonName: "'pink manjack', ' whitewood', 'white cedar', ' white-cedar', ' pink trumpet-tree'"
   },
   {
-    LatinName: "Tabebuia ochracea subsp. neochrysantha"
+    LatinName: "Tabebuia ochracea subsp. neochrysantha",
+    CommonName: "'corteza amarilla'"
   },
   {
-    LatinName: "Tilia americana"
+    LatinName: "Tilia americana",
+    CommonName: "'American basswood'"
   },
   {
-    LatinName: "Tilia cordata"
+    LatinName: "Tilia cordata",
+    CommonName: "' small-leaf linden', 'small-leaf European linden', ' small-leaf lime', ' small-leaved', 'Lime', ' winter linden tree', 'littleleaf linden', ' linden', ' littleleaf linden'"
   },
   {
-    LatinName: "Tilia tomentosa"
+    LatinName: "Tilia tomentosa",
+    CommonName: "' silver lime', 'Hungarian silver linden', ' silver linden'"
   },
   {
-    LatinName: "Triadica sebifera"
+    LatinName: "Triadica sebifera",
+    CommonName: "'tallowtree', ' popcorntree', ' Chinese tallowtree', 'Chinese tallow', ' candleberry-tree'"
   },
   {
-    LatinName: "Tristaniopsis conferta"
+    LatinName: "Tristaniopsis conferta",
+    CommonName: "'Brisbane box scrub'"
   },
   {
-    LatinName: "Ulmus alata"
+    LatinName: "Ulmus alata",
+    CommonName: "'small-leaf elm', ' winged elm', 'winged elm', ' wahoo elm'"
   },
   {
-    LatinName: "Ulmus americana"
+    LatinName: "Ulmus americana",
+    CommonName: "' water elm', ' white elm', 'American elm'"
   },
   {
-    LatinName: "Ulmus parvifolia"
+    LatinName: "Ulmus parvifolia",
+    CommonName: "' Chinese elm', 'Chinese elm', ' lacebark elm', ' lacebark', 'lacebark elm'"
   },
   {
-    LatinName: "Ulmus pumila"
+    LatinName: "Ulmus pumila",
+    CommonName: "' Chinese elm', ' dwarf elm', ' littleleaf elm', 'Siberian elm'"
   },
   {
-    LatinName: "Veitchia merrillii"
+    LatinName: "Veitchia merrillii",
+    CommonName: "'Christmas palm', 'Manila palm'"
   },
   {
-    LatinName: "Washingtonia filifera"
+    LatinName: "Washingtonia filifera",
+    CommonName: "' California washingtonia', ' Washington palm', ' American cotton palm', ' petticoat palm', 'California fan palm', ' cotton palm', ' desert fan palm'"
   },
   {
-    LatinName: "Washingtonia robusta"
+    LatinName: "Washingtonia robusta",
+    CommonName: "'Washington fan palm', ' Mexican fan palm', ' Mexican Washington palm', ' thread palm', ' fan palm', 'Mexican washingtonia'"
   },
   {
-    LatinName: "Zelkova serrata"
-  }
+    LatinName: "Zelkova serrata",
+    CommonName: "' Japanese-elm', ' water-elm', ' saw-leaf zelkova', ' keyaki', 'Japanese zelkova'"
+  },
+
 ]
 
 var list = document.getElementById('TreeName');
@@ -28956,6 +29129,9 @@ download(csvContent, 'myDBHdata.csv', 'text/csv;encoding:utf-8')
 function checkVals(){
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
+    tempobj = justnames.find(o => o.LatinName === x )
+
+    document.getElementById("commonNames").textContent=tempobj.CommonName
       if (x != '') {
          tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
          currmax=parseFloat(tempobj.max)
@@ -28984,7 +29160,7 @@ function checkVals(){
         
         // Perform desired actions here
       }
-
+      
 function checkWindowSize(){
 
 curwidth= window.innerWidth
