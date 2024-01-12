@@ -29132,7 +29132,14 @@ function checkVals(){
 
     document.getElementById("commonNames").textContent=tempobj.CommonName
       if (x != '') {
-         tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
+        
+      for (let i = 0; i < regionData.length; i++) {
+          if (coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region) !=null){
+            tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region)            
+            break;
+          }
+
+      }
          currmax=parseFloat(tempobj.max)
          currmin=parseFloat(tempobj.min)
          if (document.getElementById('DBHToggle').checked===false){

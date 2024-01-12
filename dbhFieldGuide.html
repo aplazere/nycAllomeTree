@@ -29025,7 +29025,13 @@ function checkVals(){
 
     document.getElementById("commonNames").textContent=tempobj.CommonName
       if (x != '') {
-         tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y)
+        for (let i = 0; i < regionData.length; i++) {
+          if (coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region) !=null){
+            tempobj = coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region)            
+            break;
+          }
+
+        }
          currmax=parseFloat(tempobj.max)
          currmin=parseFloat(tempobj.min)
          if (document.getElementById('DBHToggle').checked===false){
@@ -29114,7 +29120,12 @@ function dbhCalculate() {
     }
 
     
-    var dbh = parseFloat(document.getElementById('dbh').value);
+    if (document.getElementById('DBHToggle').checked===false){
+      var dbh = parseFloat(document.getElementById('dbh').value);
+    }else{
+
+      var dbh = parseFloat(document.getElementById('dbh').value)/Math.PI;
+    }    
     if (obj.EqName === "lin") {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
