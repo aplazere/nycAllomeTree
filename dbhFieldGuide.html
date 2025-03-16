@@ -390,6 +390,8 @@ p1 {
       <h2 style="text-align:center; font-size:3rem">Results </h2>
       <p style="text-align:center; font-size:2rem" id="results1"></p>
       <p style="text-align:center; font-size:2rem" id="results2"></p>
+      <p style="text-align:center; font-size:2rem" id="results3"></p>
+
 
     </div>
 
@@ -29129,14 +29131,16 @@ function dbhCalculate() {
     if (obj.EqName === "lin") {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
-        output=(a + (b * dbh) + " " + obj.PredUnit)
+	var val = (a + (b * dbh))
+        output= (val.toString() + " " + obj.PredUnit)
         //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "quad") {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
         var c = parseFloat(obj.c)
-        output=((a + b * dbh + c * Math.pow(dbh,2)) + " " + obj.PredUnit)
+        var val=((a + b * dbh + c * Math.pow(dbh,2)))
+	output= (val.toString() + " " + obj.PredUnit)
         //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "cub") {
@@ -29145,7 +29149,8 @@ function dbhCalculate() {
         var c = parseFloat(obj.c)
         var d = parseFloat(obj.d)
 
-       output=( (a + (b * dbh) + (c * (Math.pow(dbh,2))+ (d * Math.pow(dbh,3))) ) + " " + obj.PredUnit) 
+        var val=( (a + (b * dbh) + (c * (Math.pow(dbh,2))+ (d * Math.pow(dbh,3))) ))
+	output= (val.toString() + " " + obj.PredUnit)
        //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "quart") {
@@ -29155,7 +29160,8 @@ function dbhCalculate() {
         var d = parseFloat(obj.d)
         var e = parseFloat(obj.e)
 
-        output=(( a + b * dbh + c *Math.pow(dbh,2) + d * Math.pow(dbh,3)+ e * Math.pow(dbh,4)) + " " + obj.PredUnit)
+        var val=(( a + b * dbh + c *Math.pow(dbh,2) + d * Math.pow(dbh,3)+ e * Math.pow(dbh,4)))
+	output= (val.toString() + " " + obj.PredUnit)
         //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "loglogw1") {
@@ -29163,61 +29169,82 @@ function dbhCalculate() {
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
       
-      output=(Math.exp(a + b * Math.log(Math.log(dbh +1) + (c/2))) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * Math.log(Math.log(dbh +1) + (c/2))))
+      output= (val.toString() + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "loglogw2") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + (Math.sqrt(dbh) * (c/2))) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + (Math.sqrt(dbh) * (c/2))))
+      output= (val.toString() + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "loglogw3") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + (dbh) * (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + (dbh) * (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "loglogw4") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + Math.pow(dbh,2) * (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * Math.log(Math.log(dbh +1)) + Math.pow(dbh,2) * (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "expow1") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a+ b * (dbh) + (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a+ b * (dbh) + (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
+
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "expow2") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * (dbh) + Math.sqrt(dbh)  * (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * (dbh) + Math.sqrt(dbh)  * (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
+
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "expow3") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * (dbh) + (dbh) * (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * (dbh) + (dbh) * (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
+
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } else if (obj.EqName === "expow4") {
       var a = parseFloat(obj.a)
       var b = parseFloat(obj.b)
       var c = parseFloat(obj.c)
-      output=(Math.exp(a + b * (dbh) + Math.pow(dbh,2) * (c/2)) + " " + obj.PredUnit)
+      var val=(Math.exp(a + b * (dbh) + Math.pow(dbh,2) * (c/2)))
+      output= (val.toString() + " " + obj.PredUnit)
+
       //document.getElementById("results").textContent=(output +"\n" + DataLabel)
 
     } 
     document.getElementById("results1").textContent=output
     document.getElementById("results2").textContent=DataLabel
+	
+    if (y == "age"){
+	const d = new Date()
+	let year = d.getFullYear();
+	var origin=year-Math.round(val)
+	document.getElementById("results3").textContent=("this tree was alive in " + origin.toString() )
+  	} else{
+ 		document.getElementById("results3").textContent=""
+	}
     
     // so the next step will just be to use the correct equation and spit out an ouput with the units. easy enough right?
   
