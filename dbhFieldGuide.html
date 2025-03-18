@@ -383,6 +383,15 @@ p1 {
 
     <button type="button"  class="center-block"  style="font-size:1.5rem;" onclick="dbhCalculate()">Calculate</button>
     <p id="warning" style="color: red; text-align:center;"></p>
+    <p style="font-size:1.5rem ;text-align:center;"> Please select your units</p>
+    <select name="unit" id="unit" class="center-block" margin="margin: 0px 0px">
+
+
+	<option value="Inches">Inches</option>
+        <option value="Centimeters">Centimeters</option>
+    </select>
+
+
 
     </div>
 
@@ -15474,6 +15483,22 @@ const coeffs = [
     min: "2.41",
     max: "18.15"
   },
+   {
+    Region: "NoEast",
+    LatinName: "Fagus grandifolia",
+    SpCode: "FAGA",
+    Independent: "dbh",
+    Predicts: "age",
+    PredUnit: "years",
+    EqName: "lin",
+    a: "13.59",
+    b: "0.3841",
+    c: "",
+    d: "",
+    e: "",
+    min: "0",
+    max: "200"
+  },
   {
     Region: "NoEast",
     LatinName: "Fraxinus pennsylvanica",
@@ -16033,6 +16058,22 @@ const coeffs = [
     e: "",
     min: "4.01",
     max: "17.69"
+  },
+  {
+    Region: "NoEast",
+    LatinName: "Prunus serotina",
+    SpCode: "PRSE3",
+    Independent: "dbh",
+    Predicts: "age",
+    PredUnit: "years",
+    EqName: "lin",
+    a: "-4.5791",
+    b: "0.3841",
+    c: "",
+    d: "",
+    e: "",
+    min: "0",
+    max: "200"
   },
   {
     Region: "NoEast",
@@ -28504,6 +28545,10 @@ justnames = [
     LatinName: "Eucalyptus sideroxylon",
     CommonName: "'three-fruit red ironbark', 'red ironbark', 'mugga ironbark', 'black ironbark'"
   },
+ {
+    LatinName: "Fagus grandifolia",
+    CommonName: "'American beech'"
+  },
   {
     LatinName: "Fagus sylvatica",
     CommonName: "'beech', 'European beech'"
@@ -28809,6 +28854,10 @@ justnames = [
     CommonName: "'cherry plum', 'myrobalan plum'"
   },
   {
+    LatinName: "Prunus serotina",
+    CommonName: "'Black cherry'"
+  },
+  {
     LatinName: "Prunus serrulata",
     CommonName: "'Japanese cherry', 'Japanese flowering cherry', 'Oriental cherry'"
   },
@@ -29107,7 +29156,10 @@ const checkdbh = document.getElementById('dbh');
 function dbhCalculate() {
     var x = document.getElementById('TreeName').value;
     var y = document.getElementById('predict').value;
-
+    var z = document.getElementById('unit').value;
+   
+    
+   
     
     for (let i = 0; i < regionData.length; i++) {
         if (coeffs.find(o => o.LatinName === x & o.Predicts === y & o.Region === regionData[i].Region) !=null){
@@ -29127,7 +29179,10 @@ function dbhCalculate() {
     }else{
 
       var dbh = parseFloat(document.getElementById('dbh').value)/Math.PI;
-    }    
+    } 
+    if (z=="Inches"){
+	var dbh = dbh * 2.54
+    }
     if (obj.EqName === "lin") {
         var a = parseFloat(obj.a)
         var b = parseFloat(obj.b)
