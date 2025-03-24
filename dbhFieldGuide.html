@@ -29083,8 +29083,14 @@ function checkVals(){
           }
 
         }
-         currmax=parseFloat(tempobj.max)
-         currmin=parseFloat(tempobj.min)
+     if (document.getElementById('unit').value == "Inches"){
+	     fact=2.54
+     }else{
+	     fact=1
+     }
+	
+         currmax=parseFloat(tempobj.max*fact)
+         currmin=parseFloat(tempobj.min*fact)
          if (document.getElementById('DBHToggle').checked===false){
           currval=parseFloat(checkdbh.value)
          }else{
