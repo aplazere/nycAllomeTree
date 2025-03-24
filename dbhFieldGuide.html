@@ -29089,8 +29089,8 @@ function checkVals(){
 	     fact=1
      }
 	
-         currmax=parseFloat(tempobj.max*fact)
-         currmin=parseFloat(tempobj.min*fact)
+         currmax=parseFloat(tempobj.max/fact)
+         currmin=parseFloat(tempobj.min/fact)
          if (document.getElementById('DBHToggle').checked===false){
           currval=parseFloat(checkdbh.value)
          }else{
